@@ -5,6 +5,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f8f8f8",
   },
+  carousel: {
+    width: "95%",
+    alignSelf: "center",
+  },
   card: {
     flex: 1,
     borderRadius: 4,
