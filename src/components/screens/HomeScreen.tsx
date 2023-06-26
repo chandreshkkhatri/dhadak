@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import Swiper from "react-native-deck-swiper";
+import { Text, View } from "react-native";
+import Carousel from "react-native-reanimated-carousel";
 
 // import i18n from "../../services/internationalization/i18n";
 import NewsCard from "../commons/NewsCard";
@@ -34,17 +34,17 @@ export default function HomeScreen() {
         </View>
       ) : (
         <>
-          <Swiper
-            verticalSwipe={true}
-            horizontalSwipe={false}
-            backgroundColor={"#808080"}
-            cards={news}
-            renderCard={(news) => <NewsCard news={news} />}
-            showSecondCard={true}
-            swipeBackCard={true}
-            stackSize={3}
-            onSwiped={() => console.log("onSwiped")}
-            onSwipedAll={() => console.log("onSwipedAll")}
+          <Carousel
+            loop
+            height={800}
+            vertical={true}
+            data={news}
+            scrollAnimationDuration={1000}
+            onSnapToItem={(index) => console.log('current index:', index)}
+            renderItem={NewsCard}
+            panGestureHandlerProps={{
+              activeOffsetX: [-10, 10],
+            }}
           />
         </>
       )}

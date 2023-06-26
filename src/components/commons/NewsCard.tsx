@@ -1,14 +1,13 @@
-import {  View, Text, Dimensions } from "react-native";
+import { View, Text } from "react-native";
 import INews from "../../commons/types/INews";
 import styles from "../styles/global";
 
-const NewsCard = ({ news }: { news: INews }) => {
+const NewsCard = ({ item, index }: { item: INews; index: number }) => {
   return (
-    <View style={styles.card}>
-      <Text style={styles.text}>{news.title}</Text>
+    <View style={styles.card} key={index}>
+      <Text style={styles.text}>{item.title}</Text>
     </View>
   );
 };
-
 
 export default NewsCard;

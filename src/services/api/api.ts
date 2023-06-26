@@ -21,6 +21,26 @@ const news: INews[] = [
     date: "2021-01-02",
     image: "https://www.google.com",
   },
+  {
+    id: 3,
+    title: "News 3",
+    description: "Description 3",
+    url: "https://www.google.com",
+    content: "Content 3",
+    author: "Author 3",
+    date: "2021-01-03",
+    image: "https://www.google.com",
+  },
+  {
+    id: 4,
+    title: "News 4",
+    description: "Description 4",
+    url: "https://www.google.com",
+    content: "Content 4",
+    author: "Author 4",
+    date: "2021-01-04",
+    image: "https://www.google.com",
+  },
 ];
 
 const api = {
