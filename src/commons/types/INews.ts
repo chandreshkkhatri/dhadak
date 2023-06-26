@@ -1,4 +1,4 @@
-interface News {
+interface INews {
   id: number;
   title: string;
   description: string;
@@ -8,3 +8,5 @@ interface News {
   content: string;
   url: string;
 }
+
+export default INews;
