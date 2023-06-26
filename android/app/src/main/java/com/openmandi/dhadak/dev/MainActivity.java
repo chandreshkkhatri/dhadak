@@ -1,4 +1,4 @@
-package com.openmandi.dhadak;
+package com.openmandi.dhadak.dev;
 
 import android.os.Build;
 import android.os.Bundle;

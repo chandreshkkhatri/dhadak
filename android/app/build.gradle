@@ -113,13 +113,13 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace 'com.openmandi.dhadak'
+    namespace 'com.openmandi.dhadak.dev'
     defaultConfig {
-        applicationId 'com.openmandi.dhadak'
+        applicationId 'com.openmandi.dhadak.dev'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
-        versionName "1.0.0"
+        versionCode 6
+        versionName "0.0.1"
     }
 
     splits {
