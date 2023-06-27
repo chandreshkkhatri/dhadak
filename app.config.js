@@ -2,6 +2,8 @@ const dotenv = require("dotenv");
 dotenv.config({ path: ".env" });
 
 const env = process.env.ENV_NAME || "production";
+const localHostUrl = process.env.LOCALHOST_URL || "http://localhost:8000";
+
 const isProduction = env === "production";
 const androidPackageNameBase = "com.openmandi.dhadak";
 
@@ -46,6 +48,8 @@ module.exports = () => ({
       eas: {
         projectId: "e3bf33f0-480c-49ad-bbd0-6c029f45ccae",
       },
+      envName: env,
+      localHostUrl,
     },
     owner: "chandresh.code",
     runtimeVersion: {

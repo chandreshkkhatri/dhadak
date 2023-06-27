@@ -14,12 +14,13 @@ const PAGE_WIDTH = Dimensions.get("window").width;
 
 export default function HomeScreen() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [news, setNews] = useState<INews[]>([]);
+  const [feed, setFeed] = useState<INews[]>([]);
   const ref = useRef<ICarouselInstance>(null);
 
   const getNews = async () => {
-    const response = await api.getNews();
-    setNews(response);
+    const response = await api.getFeed();
+    const feed = response?.feed;
+    setFeed(feed);
     setLoading(false);
   };
 
@@ -34,7 +35,7 @@ export default function HomeScreen() {
           ref={ref}
           vertical={true}
           height={PAGE_HEIGHT}
-          data={news}
+          data={feed}
           style={styles.carousel}
           onSnapToItem={(index) => console.log("current index:", index)}
           renderItem={NewsCard}
