@@ -10,17 +10,16 @@ import INews from "../../commons/types/INews";
 import styles from "../styles/global";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 const PAGE_HEIGHT = Dimensions.get("window").height;
-const PAGE_WIDTH = Dimensions.get("window").width;
 
 export default function HomeScreen() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [feed, setFeed] = useState<INews[]>([]);
+  const [newsFeed, setNewsFeed] = useState<INews[]>([]);
   const ref = useRef<ICarouselInstance>(null);
 
   const getNews = async () => {
     const response = await api.getFeed();
     const feed = response?.feed;
-    setFeed(feed);
+    setNewsFeed(feed);
     setLoading(false);
   };
 
@@ -30,17 +29,27 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <GestureHandlerRootView>
-        <Carousel
-          ref={ref}
-          vertical={true}
-          height={PAGE_HEIGHT}
-          data={feed}
-          style={styles.carousel}
-          onSnapToItem={(index) => console.log("current index:", index)}
-          renderItem={NewsCard}
-        />
-      </GestureHandlerRootView>
+      {loading ? (
+        <View style={styles.loading}>
+          <Text>Loading...</Text>
+        </View>
+      ) : newsFeed?.length > 0 ? (
+        <GestureHandlerRootView>
+          <Carousel
+            ref={ref}
+            vertical={true}
+            height={PAGE_HEIGHT}
+            data={newsFeed}
+            style={styles.carousel}
+            onSnapToItem={(index) => console.log("current index:", index)}
+            renderItem={NewsCard}
+          />
+        </GestureHandlerRootView>
+      ) : (
+        <View style={styles.loading}>
+          <Text>No news available</Text>
+        </View>
+      )}
     </View>
   );
 }

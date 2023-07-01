@@ -23,6 +23,12 @@ const styles = StyleSheet.create({
     fontSize: 50,
     backgroundColor: "transparent",
   },
+  loading: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
 });
 
 export default styles;
