@@ -12,7 +12,7 @@ const packageName = isProduction
   : `${androidPackageNameBase}.${env}`;
 const bundleIdentifier = packageName;
 
-const appNameBase = "Dhadkan";
+const appNameBase = "Manthan";
 const appName = isProduction ? appNameBase : `${appNameBase}-${env}`;
 
 module.exports = () => ({

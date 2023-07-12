@@ -5,13 +5,13 @@ const environments = {
     apiUrl: `${Constants.expoConfig?.extra?.localHostUrl}/api/v1`,
   },
   preview: {
-    apiUrl: "https://dev.dhadkan.openmandi.in/api/v1",
+    apiUrl: "https://dev.manthan.openmandi.in/api/v1",
   },
   staging: {
-    apiUrl: "https://staging.dhadkan.openmandi.in/api/v1",
+    apiUrl: "https://staging.manthan.openmandi.in/api/v1",
   },
   production: {
-    apiUrl: "https://dhadkan.openmandi.in/api/v1",
+    apiUrl: "https://manthan.openmandi.in/api/v1",
   },
 };
 
