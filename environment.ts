@@ -2,16 +2,16 @@ import Constants from "expo-constants";
 
 const environments = {
   development: {
-    apiUrl: `${Constants.expoConfig?.extra?.localHostUrl}/dhadkan/api/v1`,
+    apiUrl: `${Constants.expoConfig?.extra?.localHostUrl}/common-admin-panel/api/v1`,
   },
   preview: {
-    apiUrl: "https://preview.example.com",
+    apiUrl: "https://dev.dhadkan.openmandi.in",
   },
   staging: {
-    apiUrl: "https://staging.example.com",
+    apiUrl: "https://staging.dhadkan.openmandi.in",
   },
   production: {
-    apiUrl: "https://example.com",
+    apiUrl: "https://dhadkan.openmandi.in",
   },
 };
 

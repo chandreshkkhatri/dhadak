@@ -1,12 +1,15 @@
 import axiosInstance from "../../commons/requests/axiosInstance";
 
 const api = {
-  getFeed: async () => {
+  getNewsfeed: async (page: number = 1, size: number = 20) => {
     try {
-      const response = await axiosInstance.get("/feed");
+      const basePath = "/newsfeed/";
+      const path = `${basePath}?page=${page}&size=${size}`;
+
+      const response = await axiosInstance.get(path);
       return response.data;
     } catch (error) {
-      console.log(JSON.stringify(error));
+      throw error;
     }
   },
 };

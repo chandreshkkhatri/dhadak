@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     backgroundColor: "transparent",
   },
-  loading: {
+  textCard: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
