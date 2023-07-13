@@ -15,7 +15,7 @@ const environments = {
   },
 };
 
-const getEnvVars = (env = Constants.manifest?.releaseChannel) => {
+const getEnvVars = (env = Constants.expoConfig?.extra?.envName) => {
   if (__DEV__) {
     return environments.development;
   } else if (env === "preview") {

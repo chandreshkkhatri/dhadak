@@ -1,19 +1,19 @@
 const dotenv = require("dotenv");
 dotenv.config({ path: ".env" });
 
-const env = process.env.ENV_NAME || "production";
+const envName = process.env.ENV_NAME || "production";
 const localHostUrl = process.env.LOCALHOST_URL || "http://localhost:8000";
 
-const isProduction = env === "production";
+const isProduction = envName === "production";
 const androidPackageNameBase = "com.openmandi.dhadak";
 
 const packageName = isProduction
   ? androidPackageNameBase
-  : `${androidPackageNameBase}.${env}`;
+  : `${androidPackageNameBase}.${envName}`;
 const bundleIdentifier = packageName;
 
 const appNameBase = "Manthan";
-const appName = isProduction ? appNameBase : `${appNameBase}-${env}`;
+const appName = isProduction ? appNameBase : `${appNameBase}-${envName}`;
 
 module.exports = () => ({
   expo: {
@@ -48,7 +48,7 @@ module.exports = () => ({
       eas: {
         projectId: "e3bf33f0-480c-49ad-bbd0-6c029f45ccae",
       },
-      envName: env,
+      envName: envName,
       localHostUrl,
     },
     owner: "chandresh.code",
