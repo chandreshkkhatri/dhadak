@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config({ path: ".env" });
 
-const envName = process.env.ENV_NAME || "production";
+const envName = process.env.ENV_NAME || "dev";
 const localHostUrl = process.env.LOCALHOST_URL || "http://localhost:8000";
 
 const isProduction = envName === "production";
