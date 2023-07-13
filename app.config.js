@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config({ path: ".env" });
 
-const envName = process.env.ENV_NAME || "dev";
+const envName = process.env.ENVIRONMENT || "dev";
 const localHostUrl = process.env.LOCALHOST_URL || "http://localhost:8000";
 
 const isProduction = envName === "production";
@@ -48,13 +48,11 @@ module.exports = () => ({
       eas: {
         projectId: "e3bf33f0-480c-49ad-bbd0-6c029f45ccae",
       },
-      envName: envName,
+      envName,
       localHostUrl,
     },
     owner: "chandresh.code",
-    runtimeVersion: {
-      policy: "sdkVersion",
-    },
+    runtimeVersion: "exposdk:48.0.0",
     updates: {
       fallbackToCacheTimeout: 0,
       url: "https://u.expo.dev/e3bf33f0-480c-49ad-bbd0-6c029f45ccae",

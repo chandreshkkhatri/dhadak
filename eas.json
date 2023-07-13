@@ -6,17 +6,29 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "channel": "development"
+      "channel": "development",
+      "env": {
+        "ENVIRONMENT": "dev"
+      }
     },
     "preview": {
       "distribution": "internal",
-      "channel": "preview"
+      "channel": "preview",
+      "env": {
+        "ENVIRONMENT": "preview"
+      }
     },
     "staging": {
-      "channel": "staging"
+      "channel": "staging",
+      "env": {
+        "ENVIRONMENT": "staging"
+      }
     },
     "production": {
-      "channel": "production"
+      "channel": "production",
+      "env": {
+        "ENVIRONMENT": "production"
+      }
     }
   },
   "submit": {
